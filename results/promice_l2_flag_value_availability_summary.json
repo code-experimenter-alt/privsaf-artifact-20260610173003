@@ -1,0 +1,25 @@
+{
+  "audited_station_variable_rows": 132,
+  "candidate_flag_rows": 20,
+  "interpretation": "PROMICE L2 station products are public and expose the candidate variables, but L2 is post-manual-flagging. A candidate interval is usable as a value+label benchmark only when the flagged variable has non-NaN values inside the sampled interval. all_nan_in_l2_samples means the public L2 product can document the flag interval but does not preserve the faulty values needed for a PrivSAF detection/repair performance panel.",
+  "l2_catalog": "https://thredds.geus.dk/thredds/catalog/aws/l2stations/netcdf/hour/catalog.html",
+  "source_inventory": "results/promice_manual_flatline_flag_inventory.csv",
+  "stations_checked": [
+    "CEN2",
+    "DY2",
+    "HUM",
+    "NAE",
+    "NAU",
+    "NEM",
+    "NSE",
+    "NUK_Uv3",
+    "SDM",
+    "THU_U2"
+  ],
+  "status": "pass",
+  "status_counts": {
+    "all_nan_in_l2_samples": 128,
+    "missing_time_bound": 2,
+    "partially_nan_in_l2_samples": 2
+  }
+}

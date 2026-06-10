@@ -1,0 +1,28 @@
+scale_rows,devices,query_name,design,plan_step,detail
+200000,2000,likelihood_join_direct_reports,base_tables,0,SCAN r
+200000,2000,likelihood_join_direct_reports,base_tables,1,SEARCH w USING INDEX sqlite_autoindex_mechanism_weights_1 (mechanism_id=? AND epsilon=? AND report_bucket=?)
+200000,2000,likelihood_join_direct_reports,base_tables,2,USE TEMP B-TREE FOR GROUP BY
+200000,2000,likelihood_join_materialized_counts,materialized_counts,0,SCAN c
+200000,2000,likelihood_join_materialized_counts,materialized_counts,1,SEARCH w USING INDEX sqlite_autoindex_mechanism_weights_1 (mechanism_id=? AND epsilon=? AND report_bucket=?)
+200000,2000,likelihood_join_materialized_counts,materialized_counts,2,USE TEMP B-TREE FOR GROUP BY
+200000,2000,candidate_topk_lookup,persisted_candidates,0,SCAN candidate_likelihoods
+200000,2000,candidate_topk_lookup,persisted_candidates,1,USE TEMP B-TREE FOR ORDER BY
+200000,2000,budget_window_direct_reports,base_window,0,CO-ROUTINE (subquery-1)
+200000,2000,budget_window_direct_reports,base_window,1,CO-ROUTINE (subquery-3)
+200000,2000,budget_window_direct_reports,base_window,2,SCAN r
+200000,2000,budget_window_direct_reports,base_window,3,USE TEMP B-TREE FOR ORDER BY
+200000,2000,budget_window_direct_reports,base_window,4,SCAN (subquery-3)
+200000,2000,budget_window_direct_reports,base_window,5,SCAN (subquery-1)
+200000,2000,budget_window_materialized,materialized_window,0,SEARCH privacy_budget_trace USING COVERING INDEX idx_budget_remaining (remaining_budget<?)
+200000,2000,repair_aggregate_direct_join,base_join_aggregate,0,SCAN r USING INDEX idx_reports_device_ts
+200000,2000,repair_aggregate_direct_join,base_join_aggregate,1,SEARCH c USING INTEGER PRIMARY KEY (rowid=?)
+200000,2000,repair_aggregate_direct_join,base_join_aggregate,2,USE TEMP B-TREE FOR GROUP BY
+200000,2000,repair_dashboard_materialized,materialized_analytics,0,SCAN repair_uncertainty_analytics USING INDEX idx_repair_device_hour
+200000,2000,provenance_event_drilldown,indexed_provenance,0,SCAN e
+200000,2000,provenance_event_drilldown,indexed_provenance,1,SEARCH l USING INTEGER PRIMARY KEY (rowid=?)
+200000,2000,provenance_event_drilldown,indexed_provenance,2,SEARCH h USING INDEX idx_repair_device_hour (device_id=? AND hour_id=?)
+200000,2000,provenance_event_drilldown,indexed_provenance,3,USE TEMP B-TREE FOR ORDER BY
+200000,2000,end_to_end_dashboard_query,ingest_clean_analyze,0,SCAN h
+200000,2000,end_to_end_dashboard_query,ingest_clean_analyze,1,SEARCH l USING INTEGER PRIMARY KEY (rowid=?)
+200000,2000,end_to_end_dashboard_query,ingest_clean_analyze,2,SEARCH e USING INDEX idx_event_windows_device_hour (device_id=? AND hour_id=?) LEFT-JOIN
+200000,2000,end_to_end_dashboard_query,ingest_clean_analyze,3,USE TEMP B-TREE FOR GROUP BY

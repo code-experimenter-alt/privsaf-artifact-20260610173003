@@ -1,0 +1,20 @@
+{
+  "fail_summary_url": "https://hadleyserver.metoffice.gov.uk/hadobs/hadisd/v343_2025f/files/all_fails_summary_20251006.dat",
+  "hadisd_page_url": "https://hadleyserver.metoffice.gov.uk/hadobs/hadisd/",
+  "interpretation": "HadISD exposes public per-station NetCDF4 QC flags with repeated-value string checks. The audited station contains real positive straight-string flags, but this single-station audit does not by itself prove PrivSAF is the selected PM-LDP operator.",
+  "ncdump": "/tmp/hadisd_tools/usr/bin/ncdump",
+  "ncdump_sha256": "e36b18076d3de4e10665b604937be7f438edfe882d15e06b65fccc055a7ea5a6",
+  "qc_tests": 71,
+  "rows": 37103,
+  "source": "HadISD v3.4.3.2025f",
+  "station_file_sha256": "f50b953f41cb65f96bd0da58d5fed77b48eb8448d6cbac6dbf4e4dcec022a4db",
+  "station_id": "702606-96401",
+  "station_url": "https://hadleyserver.metoffice.gov.uk/hadobs/hadisd/v343_2025f/data/hadisd.3.4.3.2025f_19310101-20250829_702606-96401.nc.gz",
+  "status": "pass",
+  "string_code_positive_flags": {
+    "DSS": 13,
+    "RSS": 140,
+    "TSS": 13
+  },
+  "test_codes_url": "https://hadleyserver.metoffice.gov.uk/hadobs/hadisd/v343_2025f/files/tests_codes.txt"
+}

@@ -1,0 +1,14 @@
+{
+  "status": "pass",
+  "postgres_version": "PostgreSQL 18.4 (Ubuntu 18.4-0ubuntu0.26.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0, 64-bit",
+  "rows": 200000,
+  "devices": 2000,
+  "build_rows": 12,
+  "query_rows": 21,
+  "plan_rows": 59,
+  "checks": 12,
+  "failed_checks": [],
+  "database": "privsaf_pg_benchmark",
+  "schema": "privsaf_pg",
+  "schema_sql": "sql/private_telemetry_postgres_schema.sql"
+}

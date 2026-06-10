@@ -1,0 +1,37 @@
+{
+  "calibration": "previous 1 to 12 months, all numeric rows, no same-month F-label filtering",
+  "cases_run": 40,
+  "dataset_info": "https://opendap.co-ops.nos.noaa.gov/erddap/info/IOOS_SixMin_Verified_Water_Level/index.html",
+  "eligible_cases": 41,
+  "epsilons": [
+    2.0,
+    4.0
+  ],
+  "fault_prior": 0.02,
+  "mechanism": "k_ary_randomized_response",
+  "primary_buckets": 24,
+  "private_methods": [
+    "report_frequency",
+    "channel_point_glr",
+    "channel_window_glr_5",
+    "privsaf_hmm_fixed_prior",
+    "privsaf_range_hmm_r1_fixed_prior",
+    "privsaf_range_hmm_r2_fixed_prior"
+  ],
+  "raw_upper_bounds": [
+    "raw_local_range_radius2",
+    "raw_zero_slope_radius2"
+  ],
+  "runs": 1376,
+  "seeds": [
+    0,
+    1
+  ],
+  "selection_rule": "all station-months from coops_verified_flat_flag_screen.csv with numeric_f1_rows >= 5",
+  "sensitivity_buckets": [
+    16,
+    32
+  ],
+  "sensitivity_case_count": 7,
+  "status": "pass"
+}

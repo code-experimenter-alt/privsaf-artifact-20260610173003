@@ -1,0 +1,5 @@
+recommended_family,tasks,mean_best_auprc
+local channel statistic,12,0.34047477310315805
+PrivSAF posterior model,5,0.6662739835743487
+availability detector,1,1.0
+PM-window anomaly baseline,1,0.2821492473357938

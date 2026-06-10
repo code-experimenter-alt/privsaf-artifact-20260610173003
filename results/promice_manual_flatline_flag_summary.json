@@ -1,0 +1,22 @@
+{
+  "active_manual_flag_rows": 1606,
+  "commented_out_rows": 5,
+  "essd_2026": "https://essd.copernicus.org/articles/18/2829/2026/",
+  "explicit_repeated_value_or_zero_rows": 20,
+  "flag_files": 63,
+  "flags_api": "https://api.github.com/repos/GEUS-Glaciology-and-Climate/PROMICE-AWS-data-issues/contents/flags",
+  "interpretation": "PROMICE/GC-Net supplies public station-level manual QA/QC flag intervals with comments and issue links. Many rows explicitly identify constant, flat, or too-many-zero scalar sensor periods, making it a strong candidate real flatline/stuck source. The next gate is to pair these intervals with a value product that preserves the flagged observations; the sampled L2 NetCDF product records cleaned variables and does not obviously expose per-sample QC labels for the main meteorological variables.",
+  "issues_referenced": 45,
+  "manual_flag_rows": 1611,
+  "sensor_failure_or_suspicious_rows": 46,
+  "source": "PROMICE/GC-Net AWS manual QA/QC flags",
+  "status": "pass",
+  "thredds_l2_catalog": "https://thredds.geus.dk/thredds/catalog/aws/l2stations/netcdf/hour/catalog.html",
+  "usable_by_variable_family": {
+    "humidity": 1,
+    "temperature": 12,
+    "wind_direction": 8,
+    "wind_speed": 8
+  },
+  "usable_for_pmldp_triage_rows": 20
+}

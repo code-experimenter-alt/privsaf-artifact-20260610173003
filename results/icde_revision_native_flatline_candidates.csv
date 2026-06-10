@@ -1,0 +1,42 @@
+dataset_id,dataset,target,rank,start,end,length,value,range,flank_delta,score,label_type
+air_quality,UCI Air Quality,C6H6(GT),1,7406,7414,8,-1.0,0.0,0.23719879518072284,111.36931803688188,weak_native_flatline_candidate
+air_quality,UCI Air Quality,C6H6(GT),2,5812,5824,12,-0.9994979919678716,0.0060240963855421326,0.14369979919678733,82.63325727776578,weak_native_flatline_candidate
+air_quality,UCI Air Quality,C6H6(GT),3,8161,8169,8,-0.9992469879518072,0.0060240963855421326,0.16603915662650592,77.9585226258173,weak_native_flatline_candidate
+air_quality,UCI Air Quality,C6H6(GT),4,7430,7438,8,-1.0,0.0,0.15625,73.36232854810474,weak_native_flatline_candidate
+bike_sharing,UCI Bike Sharing,cnt,1,14694,14702,8,1.0,0.0,1.4150900900900902,1110.687976548781,weak_native_flatline_candidate
+bike_sharing,UCI Bike Sharing,cnt,2,10472,10480,8,1.0,0.0,1.3916666666666666,1092.3032002379305,weak_native_flatline_candidate
+bike_sharing,UCI Bike Sharing,cnt,3,15174,15182,8,1.0,0.0,1.3207207207207208,1036.6185412194893,weak_native_flatline_candidate
+bike_sharing,UCI Bike Sharing,cnt,4,15006,15014,8,1.0,0.0,1.309009009009009,1027.426153064064,weak_native_flatline_candidate
+bike_sharing,UCI Bike Sharing,cnt,5,11982,11990,8,1.0,0.0,1.3,1020.3550852521986,weak_native_flatline_candidate
+bike_sharing,UCI Bike Sharing,cnt,6,14838,14846,8,1.0,0.0,1.2986486486486486,1019.2944250804187,weak_native_flatline_candidate
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,1,23386,23419,33,1.0,0.0,1.6213126843657817,1578.6776223017396,weak_native_flatline_candidate
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,2,23964,23997,33,1.0,0.0,1.0025811209439528,976.2166147460608,weak_native_flatline_candidate
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,3,15936,15951,15,1.0,0.0,1.3764749262536873,903.6154269620222,weak_native_flatline_candidate
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,4,7688,7706,18,1.0,0.0,1.2223451327433628,879.0221173625309,weak_native_flatline_candidate
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,5,25035,25043,8,1.0,0.0,1.814896755162242,870.094894250051,weak_native_flatline_candidate
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,6,399,410,11,1.0,0.0,1.0575221238938053,594.5049936712082,weak_native_flatline_candidate
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,7,8655,8670,15,1.0,0.0,0.8823746312684366,579.2530717171495,weak_native_flatline_candidate
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,8,14335,14347,12,1.0,0.0,0.7555309734513275,443.6215130885808,weak_native_flatline_candidate
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,9,24176,24185,9,1.0,0.0,0.8528761061946903,433.68750000000205,weak_native_flatline_candidate
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,10,8417,8440,23,1.0,0.0,0.5070058997050148,412.14177153468876,weak_native_flatline_candidate
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,11,25934,25944,10,1.0,0.0,0.5730088495575221,307.1362177438553,weak_native_flatline_candidate
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,12,14958,14967,9,1.0,0.0,0.5132743362831859,261.00000000000125,weak_native_flatline_candidate
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,13,23908,23924,16,0.9988938053097345,0.01179941002949847,0.5294985250737463,179.50000000000082,weak_native_flatline_candidate
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,14,6752,6760,8,1.0,0.0,0.33222713864306785,159.2758024622706,weak_native_flatline_candidate
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,15,13952,13961,9,1.0,0.0,0.2636430678466076,134.0625000000006,weak_native_flatline_candidate
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,16,25621,25635,14,0.999157184997893,0.005899705014749346,0.17209228824273082,109.14280966598483,weak_native_flatline_candidate
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,17,22092,22101,9,1.0,0.0,0.20833333333333337,105.93750000000051,weak_native_flatline_candidate
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,18,8642,8651,9,1.0,0.0,0.14269911504424782,72.56250000000036,weak_native_flatline_candidate
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,19,15956,15965,9,-0.950835791543756,0.02359882005899694,0.4158062930186822,52.85937500000023,weak_native_flatline_candidate
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,20,859,871,12,-1.0,0.0,0.08517699115044253,50.01296706855159,weak_native_flatline_candidate
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,21,4973,4981,8,-0.9992625368731564,0.005899705014749235,0.05530973451327437,26.51650429449567,weak_native_flatline_candidate
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,22,21283,21291,8,-0.9852507374631269,0.005899705014749346,0.04240412979351038,20.329319959112983,weak_native_flatline_candidate
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,23,6094,6102,8,-0.958702064896755,0.01179941002949847,0.07042772861356927,16.88217440082889,weak_native_flatline_candidate
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,24,19383,19399,16,-0.997787610619469,0.01179941002949847,0.046828908554572224,15.875000000000059,weak_native_flatline_candidate
+nab,NAB Machine Temperature,value,1,19312,19773,461,-0.9999995636517457,0.0002011565452643138,0.4479780424020011,9618.496478382976,weak_native_flatline_candidate
+nab,NAB Machine Temperature,value,2,3895,4000,105,-0.9999989557159522,0.0001096498250169331,0.5399895597930876,5533.246433331965,weak_native_flatline_candidate
+nab,NAB Machine Temperature,value,3,18015,18043,28,-1.0,0.0,0.46122778030070477,2440.588008860001,weak_native_flatline_candidate
+nab,NAB Machine Temperature,value,4,16970,16980,10,-1.0,0.0,0.053816755911229586,170.1835249608159,weak_native_flatline_candidate
+nab,NAB Machine Temperature,value,5,6831,6872,41,1.0,0.0,0.02279105525239289,145.93395828326814,weak_native_flatline_candidate
+nab,NAB Machine Temperature,value,6,12477,12488,11,1.0,0.0,0.021579212329527087,71.57015056845243,weak_native_flatline_candidate
+nab,NAB Machine Temperature,value,7,2167,2175,8,-1.0,0.0,0.011945590314107801,33.78723166552787,weak_native_flatline_candidate

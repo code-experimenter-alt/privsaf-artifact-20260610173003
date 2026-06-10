@@ -1,0 +1,169 @@
+{
+  "status": "measured",
+  "script": "scripts/run_icde_revision_grid.py",
+  "epsilons": [
+    2.0,
+    4.0
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "fault_modes": [
+    "iid_stuck",
+    "segment_stuck",
+    "template_stuck",
+    "bias"
+  ],
+  "raw_buckets": 32,
+  "output_buckets": 32,
+  "fault_rate": 0.2,
+  "segment_length": 48,
+  "test_len": 2400,
+  "datasets": [
+    {
+      "dataset_id": "air_quality",
+      "dataset_name": "UCI Air Quality",
+      "target": "C6H6(GT)",
+      "source_file": "data/air_quality/raw/AirQualityUCI.csv",
+      "raw_rows": 9471,
+      "finite_rows": 8991,
+      "train_rows": 5394,
+      "validation_rows": 1798,
+      "test_rows": 1799,
+      "normalization": "train p01/p99 mapped to [-1,1] with clipping",
+      "train_p01": 1.1,
+      "train_p99": 34.3,
+      "implemented_fault_modes": [
+        "iid_stuck",
+        "segment_stuck",
+        "template_stuck",
+        "bias"
+      ]
+    },
+    {
+      "dataset_id": "household_power",
+      "dataset_name": "UCI Household Power",
+      "target": "Global_active_power hourly sample",
+      "source_file": "data/household_power/raw/household_power_consumption.txt",
+      "raw_rows": 34588,
+      "finite_rows": 34154,
+      "train_rows": 20492,
+      "validation_rows": 6830,
+      "test_rows": 2400,
+      "normalization": "train p01/p99 mapped to [-1,1] with clipping",
+      "train_p01": 0.10182,
+      "train_p99": 5.0221800000000005,
+      "implemented_fault_modes": [
+        "iid_stuck",
+        "segment_stuck",
+        "template_stuck",
+        "bias"
+      ]
+    },
+    {
+      "dataset_id": "bike_sharing",
+      "dataset_name": "UCI Bike Sharing",
+      "target": "cnt",
+      "source_file": "data/bike_sharing/raw/hour.csv",
+      "raw_rows": 17379,
+      "finite_rows": 17379,
+      "train_rows": 10427,
+      "validation_rows": 3475,
+      "test_rows": 2400,
+      "normalization": "train p01/p99 mapped to [-1,1] with clipping",
+      "train_p01": 1.0,
+      "train_p99": 556.0,
+      "implemented_fault_modes": [
+        "iid_stuck",
+        "segment_stuck",
+        "template_stuck",
+        "bias"
+      ]
+    },
+    {
+      "dataset_id": "beijing_air",
+      "dataset_name": "UCI Beijing Multi-Site Air",
+      "target": "Aotizhongxin PM2.5",
+      "source_file": "data/beijing_air/raw/PRSA2017_Data_20130301-20170228/PRSA_Data_20130301-20170228/PRSA_Data_Aotizhongxin_20130301-20170228.csv",
+      "raw_rows": 35064,
+      "finite_rows": 34139,
+      "train_rows": 20483,
+      "validation_rows": 6827,
+      "test_rows": 2400,
+      "normalization": "train p01/p99 mapped to [-1,1] with clipping",
+      "train_p01": 3.0,
+      "train_p99": 342.0,
+      "implemented_fault_modes": [
+        "iid_stuck",
+        "segment_stuck",
+        "template_stuck",
+        "bias"
+      ]
+    },
+    {
+      "dataset_id": "nab",
+      "dataset_name": "NAB Machine Temperature",
+      "target": "value",
+      "source_file": "data/nab/raw/realKnownCause/machine_temperature_system_failure.csv",
+      "raw_rows": 22695,
+      "finite_rows": 22695,
+      "train_rows": 13617,
+      "validation_rows": 4539,
+      "test_rows": 2400,
+      "normalization": "train p01/p99 mapped to [-1,1] with clipping",
+      "train_p01": 49.5659301352,
+      "train_p99": 103.34777246,
+      "implemented_fault_modes": [
+        "iid_stuck",
+        "segment_stuck",
+        "template_stuck",
+        "bias"
+      ]
+    }
+  ],
+  "baseline_categories": {
+    "raw_domain_upper_bound": [
+      "raw_nonprivate_hmm",
+      "raw_hampel",
+      "raw_cusum",
+      "raw_bocpd",
+      "raw_rolling_median"
+    ],
+    "privatized_domain": [
+      "privatized_zscore",
+      "privatized_rolling_median",
+      "privatized_cusum",
+      "privatized_bocpd"
+    ],
+    "channel_aware_baseline": [
+      "ldp_distribution_surprise",
+      "ldp_postmean_hampel",
+      "ldp_postmean_cusum",
+      "ldp_postmean_rolling_median",
+      "ldp_window_kl",
+      "ldp_window_glr"
+    ],
+    "privacy_aware": [
+      "privsaf_mixture",
+      "privsaf_hmm"
+    ],
+    "channel_ablation": [
+      "privsaf_hmm_wrong_epsilon_half",
+      "privsaf_hmm_wrong_epsilon_double"
+    ]
+  },
+  "repair_methods": [
+    "no_repair",
+    "linear_interpolation",
+    "locf",
+    "rolling_median",
+    "privatized_zscore_repair",
+    "ldp_postmean_hampel_repair",
+    "ldp_window_glr_repair",
+    "privsaf_repair",
+    "privsaf_soft_private_repair"
+  ],
+  "repair_note": "Interpolation/LOCF/rolling-median use oracle masks as raw-domain repair-operator controls; PrivSAF repair uses a top-k mask from privatized posterior scores and local linear interpolation without oracle labels."
+}

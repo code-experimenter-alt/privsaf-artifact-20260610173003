@@ -1,0 +1,8 @@
+work_package,start_day,duration_days,scope
+manifest and loaders,0,1.0,all datasets
+fault taxonomy injection,1.0,1.0,six modes
+baseline suite,2.0,1.5,"PM-no-clean, robust, mixture, HMM"
+model selection rule,3.5,1.0,privatized validation likelihood
+budget estimator,4.5,1.5,support + likelihood + bootstrap
+expanded grid run,6.0,2.0,must-run datasets
+figures and tables,8.0,1.0,generated from CSV

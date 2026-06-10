@@ -1,0 +1,53 @@
+scale_rows,devices,storage_mode,workload,plan_step,detail
+50000,500,memory,candidate_likelihood_join,0,SCAN c
+50000,500,memory,candidate_likelihood_join,1,SEARCH w USING INDEX sqlite_autoindex_mechanism_weights_1 (mechanism_id=? AND epsilon=? AND report_bucket=?)
+50000,500,memory,candidate_likelihood_join,2,USE TEMP B-TREE FOR GROUP BY
+50000,500,memory,provenance_drilldown,0,SEARCH c USING INDEX idx_cleaning_action (action=?)
+50000,500,memory,provenance_drilldown,1,SEARCH r USING INTEGER PRIMARY KEY (rowid=?)
+50000,500,memory,provenance_drilldown,2,SEARCH p USING INDEX idx_provenance_key (output_report_id=?)
+50000,500,memory,provenance_drilldown,3,USE TEMP B-TREE FOR ORDER BY
+50000,500,memory,privacy_budget_window,0,CO-ROUTINE (subquery-2)
+50000,500,memory,privacy_budget_window,1,SCAN reports USING INDEX idx_reports_device_ts
+50000,500,memory,privacy_budget_window,2,SCAN (subquery-2)
+50000,500,memory,repair_aggregate_query,0,SCAN r USING INDEX idx_reports_device_ts
+50000,500,memory,repair_aggregate_query,1,SEARCH c USING INTEGER PRIMARY KEY (rowid=?)
+50000,500,memory,repair_aggregate_query,2,USE TEMP B-TREE FOR GROUP BY
+100000,1000,memory,candidate_likelihood_join,0,SCAN c
+100000,1000,memory,candidate_likelihood_join,1,SEARCH w USING INDEX sqlite_autoindex_mechanism_weights_1 (mechanism_id=? AND epsilon=? AND report_bucket=?)
+100000,1000,memory,candidate_likelihood_join,2,USE TEMP B-TREE FOR GROUP BY
+100000,1000,memory,provenance_drilldown,0,SEARCH c USING INDEX idx_cleaning_action (action=?)
+100000,1000,memory,provenance_drilldown,1,SEARCH r USING INTEGER PRIMARY KEY (rowid=?)
+100000,1000,memory,provenance_drilldown,2,SEARCH p USING INDEX idx_provenance_key (output_report_id=?)
+100000,1000,memory,provenance_drilldown,3,USE TEMP B-TREE FOR ORDER BY
+100000,1000,memory,privacy_budget_window,0,CO-ROUTINE (subquery-2)
+100000,1000,memory,privacy_budget_window,1,SCAN reports USING INDEX idx_reports_device_ts
+100000,1000,memory,privacy_budget_window,2,SCAN (subquery-2)
+100000,1000,memory,repair_aggregate_query,0,SCAN r USING INDEX idx_reports_device_ts
+100000,1000,memory,repair_aggregate_query,1,SEARCH c USING INTEGER PRIMARY KEY (rowid=?)
+100000,1000,memory,repair_aggregate_query,2,USE TEMP B-TREE FOR GROUP BY
+200000,2000,memory,candidate_likelihood_join,0,SCAN c
+200000,2000,memory,candidate_likelihood_join,1,SEARCH w USING INDEX sqlite_autoindex_mechanism_weights_1 (mechanism_id=? AND epsilon=? AND report_bucket=?)
+200000,2000,memory,candidate_likelihood_join,2,USE TEMP B-TREE FOR GROUP BY
+200000,2000,memory,provenance_drilldown,0,SEARCH c USING INDEX idx_cleaning_action (action=?)
+200000,2000,memory,provenance_drilldown,1,SEARCH r USING INTEGER PRIMARY KEY (rowid=?)
+200000,2000,memory,provenance_drilldown,2,SEARCH p USING INDEX idx_provenance_key (output_report_id=?)
+200000,2000,memory,provenance_drilldown,3,USE TEMP B-TREE FOR ORDER BY
+200000,2000,memory,privacy_budget_window,0,CO-ROUTINE (subquery-2)
+200000,2000,memory,privacy_budget_window,1,SCAN reports USING INDEX idx_reports_device_ts
+200000,2000,memory,privacy_budget_window,2,SCAN (subquery-2)
+200000,2000,memory,repair_aggregate_query,0,SCAN r USING INDEX idx_reports_device_ts
+200000,2000,memory,repair_aggregate_query,1,SEARCH c USING INTEGER PRIMARY KEY (rowid=?)
+200000,2000,memory,repair_aggregate_query,2,USE TEMP B-TREE FOR GROUP BY
+200000,2000,file_wal,candidate_likelihood_join,0,SCAN c
+200000,2000,file_wal,candidate_likelihood_join,1,SEARCH w USING INDEX sqlite_autoindex_mechanism_weights_1 (mechanism_id=? AND epsilon=? AND report_bucket=?)
+200000,2000,file_wal,candidate_likelihood_join,2,USE TEMP B-TREE FOR GROUP BY
+200000,2000,file_wal,provenance_drilldown,0,SEARCH c USING INDEX idx_cleaning_action (action=?)
+200000,2000,file_wal,provenance_drilldown,1,SEARCH r USING INTEGER PRIMARY KEY (rowid=?)
+200000,2000,file_wal,provenance_drilldown,2,SEARCH p USING INDEX idx_provenance_key (output_report_id=?)
+200000,2000,file_wal,provenance_drilldown,3,USE TEMP B-TREE FOR ORDER BY
+200000,2000,file_wal,privacy_budget_window,0,CO-ROUTINE (subquery-2)
+200000,2000,file_wal,privacy_budget_window,1,SCAN reports USING INDEX idx_reports_device_ts
+200000,2000,file_wal,privacy_budget_window,2,SCAN (subquery-2)
+200000,2000,file_wal,repair_aggregate_query,0,SCAN r USING INDEX idx_reports_device_ts
+200000,2000,file_wal,repair_aggregate_query,1,SEARCH c USING INTEGER PRIMARY KEY (rowid=?)
+200000,2000,file_wal,repair_aggregate_query,2,USE TEMP B-TREE FOR GROUP BY

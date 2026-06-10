@@ -1,0 +1,294 @@
+{
+  "benchmark_id": "privsaf_private_telemetry_relational_pipeline_v1",
+  "purpose": "Reproducible relational benchmark configuration for private telemetry ingestion, cleaning, provenance, uncertainty analytics, and privacy accounting.",
+  "scale": {
+    "report_rows": 200000,
+    "devices": 2000,
+    "buckets": 32,
+    "epsilons": [0.5, 1.0, 2.0],
+    "mechanism_id": "pm32",
+    "calibration_version": "cal_v1",
+    "seed": 17001
+  },
+  "storage_modes": [
+    {
+      "id": "memory",
+      "engine": "sqlite",
+      "journal_mode": "memory"
+    },
+    {
+      "id": "file_wal",
+      "engine": "sqlite",
+      "journal_mode": "wal",
+      "database_path": "results/private_telemetry_pipeline_200k.sqlite"
+    }
+  ],
+  "physical_designs": [
+    {
+      "id": "heap_base",
+      "state": "base tables only",
+      "maintenance": "query-time scans"
+    },
+    {
+      "id": "indexed_base",
+      "state": "secondary indexes on report channel, device time, action, and provenance keys",
+      "maintenance": "query-time scans with indexes"
+    },
+    {
+      "id": "materialized_batch",
+      "state": "batch materialized report counts, privacy ledger, budget trace, event windows, and repair analytics",
+      "maintenance": "batch refresh after ingest"
+    },
+    {
+      "id": "incremental_mv",
+      "state": "trigger-maintained report counts, privacy ledger, event windows, and repair analytics",
+      "maintenance": "incremental update during ingest and cleaning writes"
+    }
+  ],
+  "query_mix": [
+    {
+      "id": "Q1",
+      "name": "candidate_likelihood_base",
+      "category": "query_processing",
+      "source": "sql/private_telemetry_query_suite.sql#Q1",
+      "reads": ["reports", "mechanism_weights"],
+      "state": "base reports"
+    },
+    {
+      "id": "Q2",
+      "name": "candidate_likelihood_materialized_counts",
+      "category": "query_processing",
+      "source": "sql/private_telemetry_query_suite.sql#Q2",
+      "reads": ["mv_report_counts", "mechanism_weights"],
+      "state": "batch materialized counts"
+    },
+    {
+      "id": "Q3",
+      "name": "candidate_topk",
+      "category": "query_processing",
+      "source": "sql/private_telemetry_query_suite.sql#Q3",
+      "reads": ["candidate_likelihoods"],
+      "state": "persisted likelihoods"
+    },
+    {
+      "id": "Q4",
+      "name": "privacy_budget_window_base",
+      "category": "privacy_accounting",
+      "source": "sql/private_telemetry_query_suite.sql#Q4",
+      "reads": ["reports"],
+      "state": "window aggregation"
+    },
+    {
+      "id": "Q5",
+      "name": "privacy_budget_trace_materialized",
+      "category": "privacy_accounting",
+      "source": "sql/private_telemetry_query_suite.sql#Q5",
+      "reads": ["privacy_budget_trace"],
+      "state": "materialized budget trace"
+    },
+    {
+      "id": "Q6",
+      "name": "repair_uncertainty_base",
+      "category": "uncertainty_analytics",
+      "source": "sql/private_telemetry_query_suite.sql#Q6",
+      "reads": ["reports", "cleaning_records"],
+      "state": "base cleaning records"
+    },
+    {
+      "id": "Q7",
+      "name": "repair_dashboard_materialized",
+      "category": "uncertainty_analytics",
+      "source": "sql/private_telemetry_query_suite.sql#Q7",
+      "reads": ["repair_uncertainty_analytics"],
+      "state": "materialized repair analytics"
+    },
+    {
+      "id": "Q8",
+      "name": "provenance_event_drilldown",
+      "category": "provenance_drilldown",
+      "source": "sql/private_telemetry_query_suite.sql#Q8",
+      "reads": ["cleaned_event_windows", "repair_uncertainty_analytics", "privacy_ledger"],
+      "state": "materialized event windows"
+    },
+    {
+      "id": "Q9",
+      "name": "end_to_end_dashboard",
+      "category": "end_to_end_analytics",
+      "source": "sql/private_telemetry_query_suite.sql#Q9",
+      "reads": ["repair_uncertainty_analytics", "privacy_ledger", "cleaned_event_windows"],
+      "state": "ingestion-cleaning-analytics dashboard"
+    }
+  ],
+  "workload_mix": {
+    "ingest_clean_analytics": {
+      "update_rows": 200000,
+      "cleaning_rows": 200000,
+      "analytics_queries": 9,
+      "update_to_query_ratio": "200000 reports + 200000 cleaning writes per 9 analytic queries"
+    },
+    "end_to_end_workflow": {
+      "requested_events": 72000,
+      "accepted_reports": 60000,
+      "devices": 600,
+      "microbatch_rows": 6000,
+      "device_budget": 120.0,
+      "replay_batches": 2,
+      "late_corrections": 120,
+      "dashboard_queries": 8,
+      "query_repetitions": 3,
+      "features": [
+        "microbatch_ingestion",
+        "idempotent_replay",
+        "late_correction_lineage",
+        "privacy_budget_guard",
+        "cleaning_provenance_upsert",
+        "privacy_budget_trace",
+        "event_windows",
+        "repair_uncertainty_analytics"
+      ]
+    },
+    "physical_design_ablation": {
+      "designs": ["heap_base", "indexed_base", "materialized_batch", "incremental_mv"],
+      "timed_queries_per_design": 4,
+      "repetitions": 3
+    }
+  },
+  "drivers": {
+    "config_env": "PRIVATE_TELEMETRY_BENCHMARK_CONFIG",
+    "pipeline_query": {
+      "script": "scripts/run_private_telemetry_pipeline_queries.py",
+      "memory_scales": [50000, 100000, 200000],
+      "memory_seed_base": 9000,
+      "memory_min_devices": 250,
+      "memory_rows_per_device": 100,
+      "file_seed": 9100,
+      "query_suite_repetitions": 3
+    },
+    "physical_design": {
+      "script": "scripts/run_private_telemetry_physical_design_ablation.py",
+      "seed": 12027
+    },
+    "sqlite_verifier": {
+      "script": "scripts/verify_private_telemetry_sqlite_artifact.py",
+      "db": "results/private_telemetry_pipeline_200k.sqlite",
+      "out": "results/private_telemetry_sqlite_verification.csv"
+    },
+    "sqlite_operational_stress": {
+      "script": "scripts/run_private_telemetry_sqlite_operational_stress.py",
+      "temp_database_dir": "/tmp/privsaf_sqlite_operational_stress",
+      "database_path": "private_telemetry_operational_stress.sqlite",
+      "pressure_database_path": "private_telemetry_page_limit_pressure.sqlite",
+      "writer_clients": 3,
+      "reader_clients": 2,
+      "report_rows": 12000,
+      "devices": 300,
+      "writer_chunk_rows": 2000,
+      "reader_sleep_sec": 0.01,
+      "page_limit_pressure_rows": 40000,
+      "page_limit_pages": 384
+    },
+    "end_to_end_workflow": {
+      "script": "scripts/run_private_telemetry_end_to_end_workflow.py",
+      "sql": "sql/private_telemetry_end_to_end_workflow.sql",
+      "database_path": "results/private_telemetry_end_to_end_workflow.sqlite",
+      "requested_events": 72000,
+      "accepted_reports": 60000,
+      "devices": 600,
+      "device_budget": 120.0
+    },
+    "duckdb_integration": {
+      "script": "scripts/run_duckdb_private_telemetry_pipeline.py",
+      "cli_env": "DUCKDB_CLI",
+      "cli_path": "/tmp/duckdb_cli/duckdb",
+      "database_path": "results/private_telemetry_duckdb_pipeline.duckdb",
+      "report_rows": 200000,
+      "devices": 2000
+    },
+    "config_verifier": {
+      "script": "scripts/verify_private_telemetry_benchmark_config.py"
+    },
+    "postgres_optional": {
+      "script": "scripts/run_postgres_private_telemetry_pipeline.py",
+      "sql": "sql/private_telemetry_postgres_schema.sql",
+      "database": "privsaf_pg_benchmark",
+      "schema": "privsaf_pg",
+      "report_rows": 200000,
+      "devices": 2000,
+      "query_repetitions": 3,
+      "requires": ["psql_or_postgres", "psycopg2", "PRIVSAF_POSTGRES_DSN"]
+    }
+  },
+  "orchestration_outputs": [
+    "results/private_telemetry_benchmark_config_manifest.csv",
+    "results/private_telemetry_benchmark_config_manifest.json"
+  ],
+  "required_outputs": [
+    "results/private_telemetry_pipeline_query_benchmark.csv",
+    "results/private_telemetry_pipeline_query_plans.csv",
+    "results/private_telemetry_pipeline_200k.sqlite",
+    "results/private_telemetry_sql_query_suite.csv",
+    "results/private_telemetry_sql_query_suite_summary.csv",
+    "results/private_telemetry_sql_query_suite_plans.csv",
+    "results/private_telemetry_sqlite_verification.csv",
+    "results/private_telemetry_physical_design_queries.csv",
+    "results/private_telemetry_physical_design_summary.csv",
+    "results/private_telemetry_physical_design_plans.csv",
+    "results/private_telemetry_physical_design_checks.csv",
+    "results/private_telemetry_sqlite_operational_stress.csv",
+    "results/private_telemetry_sqlite_operational_stress_detail.csv",
+    "results/private_telemetry_sqlite_operational_stress.json",
+    "results/private_telemetry_end_to_end_workflow.sqlite",
+    "results/private_telemetry_end_to_end_workflow_batches.csv",
+    "results/private_telemetry_end_to_end_workflow_queries.csv",
+    "results/private_telemetry_end_to_end_workflow_plans.csv",
+    "results/private_telemetry_end_to_end_workflow_checks.csv",
+    "results/private_telemetry_end_to_end_workflow_summary.json",
+    "results/private_telemetry_duckdb_environment_audit.csv",
+    "results/private_telemetry_duckdb_build.csv",
+    "results/private_telemetry_duckdb_queries.csv",
+    "results/private_telemetry_duckdb_plans.csv",
+    "results/private_telemetry_duckdb_verification.csv",
+    "results/private_telemetry_duckdb_summary.json",
+    "results/private_telemetry_duckdb_pipeline.duckdb"
+  ],
+  "optional_server_dbms_outputs": [
+    "results/private_telemetry_postgres_environment_audit.csv",
+    "results/private_telemetry_postgres_integration_summary.json",
+    "results/private_telemetry_postgres_query_benchmark.csv",
+    "results/private_telemetry_postgres_queries.csv",
+    "results/private_telemetry_postgres_plans.csv",
+    "results/private_telemetry_postgres_verification.csv"
+  ],
+  "acceptance_checks": {
+    "required_query_count": 9,
+    "required_end_to_end_query_count": 8,
+    "required_end_to_end_checks": 13,
+    "required_end_to_end_features": [
+      "microbatch_ingestion",
+      "idempotent_replay",
+      "late_correction_lineage",
+      "privacy_budget_guard",
+      "cleaning_provenance_upsert",
+      "privacy_budget_trace",
+      "event_windows",
+      "repair_uncertainty_analytics"
+    ],
+    "required_physical_designs": ["heap_base", "indexed_base", "materialized_batch", "incremental_mv"],
+    "required_categories": [
+      "query_processing",
+      "privacy_accounting",
+      "uncertainty_analytics",
+      "provenance_drilldown",
+      "end_to_end_analytics"
+    ],
+    "required_result_files_exist": true,
+    "required_postgres_query_count_if_available": 7,
+    "required_postgres_checks_if_available": 12,
+    "server_dbms_required_for_strong_systems_claim": true
+  },
+  "non_claims": [
+    "The default manifest does not require PostgreSQL because it needs a local server and DSN; the optional PostgreSQL stage records server-DBMS evidence when available.",
+    "SQLite operational stress is a bounded artifact audit, not a production concurrency or recovery benchmark.",
+    "The end-to-end SQLite workflow tests the relational cleaning pipeline and dashboard queries, not a distributed stream processor."
+  ]
+}

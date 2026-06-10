@@ -1,0 +1,54 @@
+{
+  "dataset": "UCI Air Quality",
+  "source_url": "https://archive.ics.uci.edu/static/public/360/air+quality.zip",
+  "raw_csv": "data/air_quality/raw/AirQualityUCI.csv",
+  "target": "C6H6(GT)",
+  "missing_value_marker": -200,
+  "split": {
+    "n_after_missing_value_filter": 8991,
+    "n_train": 5394,
+    "n_validation": 1798,
+    "n_test": 1799,
+    "train_min": 0.5,
+    "train_max": 52.1
+  },
+  "normalization": "train MinMax to [-1, 1], validation/test clipped",
+  "privacy_mechanism": "piecewise mechanism, independent per report",
+  "epsilon_values": [
+    1.0,
+    1.2,
+    1.4,
+    1.6,
+    1.8,
+    2.0
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "raw_buckets": 32,
+  "output_buckets": 32,
+  "fault_rate": 0.3,
+  "segment_length": 24,
+  "stuck_values": [
+    0.03125,
+    0.84375
+  ],
+  "injection_modes": [
+    "segment",
+    "iid"
+  ],
+  "methods": [
+    "random",
+    "mixture",
+    "hmm"
+  ],
+  "outputs": [
+    "results/air_quality_runs.csv",
+    "results/air_quality_summary.csv",
+    "results/fig_air_quality_repro.png"
+  ]
+}

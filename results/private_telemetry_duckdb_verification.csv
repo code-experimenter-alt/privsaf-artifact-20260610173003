@@ -1,0 +1,7 @@
+check,expected,observed,status
+reports,200000,200000,pass
+cleaning_records,200000,200000,pass
+provenance_edges,200000,200000,pass
+mv_report_counts_sum,200000,200000,pass
+privacy_ledger_sum,200000,200000,pass
+repair_groups_nonempty,1,1,pass

@@ -1,0 +1,52 @@
+{
+  "rows": 64,
+  "plan_rows": 52,
+  "query_suite_rows": 27,
+  "query_suite_plan_rows": 27,
+  "query_suite_summary_rows": 9,
+  "scales": [
+    50000,
+    100000,
+    200000
+  ],
+  "storage_modes": [
+    "file_wal",
+    "memory"
+  ],
+  "workloads": [
+    "budget_audit",
+    "build_cleaning_indexes",
+    "build_indexes",
+    "candidate_likelihood_join",
+    "derive_cleaning_records",
+    "event_window_materialization",
+    "hourly_analytics_view",
+    "ingest_reports",
+    "load_mechanism_matrix",
+    "load_router_policy",
+    "materialized_counts",
+    "privacy_budget_window",
+    "privacy_ledger",
+    "provenance_drilldown",
+    "repair_uncertainty_aggregate",
+    "write_provenance"
+  ],
+  "query_suite": [
+    "budget_window_direct_reports",
+    "budget_window_materialized",
+    "candidate_topk_lookup",
+    "end_to_end_dashboard_query",
+    "likelihood_join_direct_reports",
+    "likelihood_join_materialized_counts",
+    "provenance_event_drilldown",
+    "repair_aggregate_direct_join",
+    "repair_dashboard_materialized"
+  ],
+  "csv": "/tmp/privsaf_pipeline_results_v5/private_telemetry_pipeline_query_benchmark.csv",
+  "plans_csv": "/tmp/privsaf_pipeline_results_v5/private_telemetry_pipeline_query_plans.csv",
+  "query_suite_csv": "/tmp/privsaf_pipeline_results_v5/private_telemetry_sql_query_suite.csv",
+  "query_suite_plans_csv": "/tmp/privsaf_pipeline_results_v5/private_telemetry_sql_query_suite_plans.csv",
+  "query_suite_summary_csv": "/tmp/privsaf_pipeline_results_v5/private_telemetry_sql_query_suite_summary.csv",
+  "file_backed_sqlite": "/tmp/privsaf_pipeline_results_v5/private_telemetry_pipeline_200k.sqlite",
+  "file_backed_sqlite_bytes": 61882368
+}

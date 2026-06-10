@@ -1,0 +1,13 @@
+check,expected,observed,status
+count:reports,200000,200000,pass
+count:cleaning_records,200000,200000,pass
+count:provenance_edges,200000,200000,pass
+sum:mv_report_counts,200000,200000,pass
+count:candidate_likelihoods,96,96,pass
+sum:privacy_ledger,200000,200000,pass
+count:privacy_budget_trace,200000,200000,pass
+nonempty:cleaned_event_windows,>0,4000,pass
+nonempty:repair_uncertainty_analytics,>0,4000,pass
+query_rows,21,21,pass
+plan_rows,>0,59,pass
+server_version,PostgreSQL,PostgreSQL 18.4 (Ubuntu 18.4-0ubuntu0.26.04.1),pass

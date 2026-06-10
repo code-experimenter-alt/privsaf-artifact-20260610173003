@@ -1,0 +1,4 @@
+panel,method,cases,years,auroc_mean,auroc_std,auprc_mean,auprc_std,recall_at_5pct_fpr_mean,precision_at_k_mean,runtime_sec_mean
+iors_real_dropout_qc_pmldp,missing_symbol,96,8,1.0,0.0,1.0,0.0,1.0,1.0,0.00011532812565443844
+iors_real_dropout_qc_pmldp,privsaf_dropout_hmm,96,8,0.9999977250786344,4.771185028287063e-06,0.9999854468556691,3.597086064326426e-05,1.0,0.9993545155138462,0.5537225229163596
+iors_real_dropout_qc_pmldp,rolling_missing_fraction,96,8,0.999718974240369,0.0005159991778148003,0.9983525233832071,0.0037077356092111414,1.0,0.9917191575590638,0.0011173677085025702

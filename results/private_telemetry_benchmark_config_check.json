@@ -1,0 +1,7 @@
+{
+  "status": "pass",
+  "checks": 76,
+  "passes": 76,
+  "failures": [],
+  "config": "configs/private_telemetry_benchmark_config.json"
+}

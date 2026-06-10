@@ -1,0 +1,19 @@
+{
+  "accepted_reports": 60000,
+  "batches": 15,
+  "checks": 13,
+  "correction_events": 120,
+  "database": "results/private_telemetry_end_to_end_workflow.sqlite",
+  "database_bytes": 21938176,
+  "device_budget": 120.0,
+  "devices": 600,
+  "duplicate_events": 10000,
+  "failed_checks": [],
+  "interpretation": "End-to-end SQLite workflow for private telemetry cleaning: microbatch ingestion, idempotent replay, late correction propagation, budget guarding, cleaning/provenance upserts, privacy traces, event windows, repair-uncertainty analytics, and dashboard queries.",
+  "late_events": 11520,
+  "plan_rows": 22,
+  "query_rows": 24,
+  "rejected_budget_events": 14000,
+  "rows_requested": 72000,
+  "status": "pass"
+}

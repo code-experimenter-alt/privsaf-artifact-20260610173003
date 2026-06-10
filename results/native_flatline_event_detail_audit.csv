@@ -1,0 +1,18 @@
+dataset_id,dataset,target,episode_id,start,end,length,flatline_bin,raw_mean,raw_std,raw_range,exact_constant,small_range,edge_bucket,interior_bucket,evidence_grade,clipping_risk
+air_quality,UCI Air Quality,C6H6(GT),0,5812,5824,12,0,-0.9994979919678716,0.0016649722843149499,0.0060240963855421326,0,1,1,0,edge_small_range,1
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,0,23386,23419,33,31,1.0,0.0,0.0,1,0,1,0,edge_exact,1
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,1,23964,23997,33,31,1.0,0.0,0.0,1,0,1,0,edge_exact,1
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,2,15936,15951,15,31,1.0,0.0,0.0,1,0,1,0,edge_exact,1
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,3,7688,7706,18,31,1.0,0.0,0.0,1,0,1,0,edge_exact,1
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,4,8655,8670,15,31,1.0,0.0,0.0,1,0,1,0,edge_exact,1
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,5,14335,14347,12,31,1.0,0.0,0.0,1,0,1,0,edge_exact,1
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,6,8417,8440,23,31,1.0,0.0,0.0,1,0,1,0,edge_exact,1
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,7,23908,23924,16,31,0.9988938053097345,0.0031069873794898036,0.01179941002949847,0,1,1,0,edge_small_range,1
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,8,25621,25635,14,31,0.999157184997893,0.0020644667027250006,0.005899705014749346,0,1,1,0,edge_small_range,1
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,9,859,871,12,0,-1.0,0.0,0.0,1,0,1,0,edge_exact,1
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,10,19383,19399,16,0,-0.997787610619469,0.004106020916541295,0.01179941002949847,0,1,1,0,edge_small_range,1
+beijing_air,UCI Beijing Multi-Site Air,Aotizhongxin PM2.5,11,15434,15446,12,0,-0.9552605703048179,0.007004821459574699,0.02359882005899694,0,1,1,0,edge_small_range,1
+nab,NAB Machine Temperature,value,0,19312,19773,461,0,-0.9999995636517457,9.358627441135809e-06,0.0002011565452643138,0,1,1,0,edge_small_range,1
+nab,NAB Machine Temperature,value,1,3895,4000,105,0,-0.9999989557159522,1.0649649474730974e-05,0.0001096498250169331,0,1,1,0,edge_small_range,1
+nab,NAB Machine Temperature,value,2,18015,18043,28,0,-1.0,0.0,0.0,1,0,1,0,edge_exact,1
+nab,NAB Machine Temperature,value,3,6831,6872,41,31,1.0,0.0,0.0,1,0,1,0,edge_exact,1

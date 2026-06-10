@@ -1,0 +1,18 @@
+{
+  "buckets": 24,
+  "cases": 6,
+  "dataset_info": "https://opendap.co-ops.nos.noaa.gov/erddap/info/IOOS_SixMin_Verified_Water_Level/index.html",
+  "epsilons": [
+    2.0,
+    4.0
+  ],
+  "interpretation": "This panel uses public NOAA CO-OPS verified six-minute rows where WL_VALUE and the official flat-tolerance flag F are present in the same ERDDAP product. It is a first public real value+label flatline PM-LDP-style screen; the mechanism is k-ary randomized response over discretized water levels. ERDDAP END_DATE is handled as an inclusive calendar-day bound.",
+  "label_rule": "verified_six_minute_F_flat_tolerance_flag_equals_1",
+  "mechanism": "k_ary_randomized_response",
+  "runs": 96,
+  "seeds": [
+    0,
+    1
+  ],
+  "status": "pass"
+}

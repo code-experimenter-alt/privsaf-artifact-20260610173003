@@ -1,0 +1,17 @@
+status,dataset_id,epsilon_true,epsilon_hat,ci_low,ci_high,stable_flag
+expected_not_measured,air_quality,0.5,0.551,0.401,0.701,True
+expected_not_measured,air_quality,1.0,1.075,0.819,1.331,True
+expected_not_measured,air_quality,2.0,2.043,1.531,2.555,True
+expected_not_measured,air_quality,4.0,3.872,2.848,4.896,True
+expected_not_measured,household_power,0.5,0.538,0.388,0.688,True
+expected_not_measured,household_power,1.0,1.056,0.864,1.248,True
+expected_not_measured,household_power,2.0,2.032,1.648,2.416,True
+expected_not_measured,household_power,4.0,3.904,3.136,4.672,True
+expected_not_measured,beijing_air,0.5,0.532,0.382,0.682,True
+expected_not_measured,beijing_air,1.0,1.047,0.887,1.207,True
+expected_not_measured,beijing_air,2.0,2.027,1.707,2.347,True
+expected_not_measured,beijing_air,4.0,3.92,3.28,4.56,True
+expected_not_measured,nab,0.5,0.57,0.394,0.746,False
+expected_not_measured,nab,1.0,1.103,0.751,1.455,False
+expected_not_measured,nab,2.0,2.059,1.355,2.763,False
+expected_not_measured,nab,4.0,3.824,2.416,5.232,False
