@@ -1,5 +1,0 @@
-component,available,path_or_version
-psql,1,/usr/bin/psql
-postgres,1,/usr/lib/postgresql/18/bin/postgres
-python_psycopg2,1,2.9.11 (dt dec pq3 ext lo64)
-server_connection,1,"PostgreSQL 18.4 (Ubuntu 18.4-0ubuntu0.26.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0, 64-bit"

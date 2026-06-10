@@ -1,25 +1,27 @@
 # GitHub Upload Notes
 
-This package contains the current PrivSAF manuscript source, experiment scripts, SQL/configuration files, documentation, and lightweight result ledgers/figures.
+This clean package is intended for the public artifact repository behind the
+anonymous link.
 
 Included:
 
-- `scripts/`: all Python experiment, audit, plotting, and verification scripts
-- `sql/`: SQLite, DuckDB, PostgreSQL, physical-design, and workflow SQL
-- `configs/`: benchmark and must-run configuration files
-- `results/`: CSV/JSON/PNG outputs needed for paper figures and audit ledgers
-- `reports/`: artifact documentation and execution/audit notes
-- `main.tex`, `references.bib`, and manuscript figures needed by the paper source
+- paper source and compile-time figures;
+- Python reproduction scripts;
+- SQL schemas and query workloads;
+- benchmark configuration files;
+- selected lightweight CSV/JSON/PNG result ledgers needed to audit the paper.
 
 Excluded intentionally:
 
-- raw downloaded datasets
-- large SQLite/DuckDB database files and WAL/SHM files
-- ERDDAP/cache directories
-- virtual environments and wheelhouse dependencies
-- generated LaTeX intermediate files
-- generated PDFs
-- separate supplementary TeX/PDF files, because the former supplementary material has been folded into `main.tex`
-- previous `release_packages/` contents
+- review notes, prompts, writing checklists, and revision logs;
+- raw downloaded datasets and local caches;
+- SQLite/DuckDB/PostgreSQL database files and WAL/SHM files;
+- generated PDFs and LaTeX intermediate files;
+- former supplementary TeX/PDF files;
+- virtual environments, Python caches, and previous package outputs.
 
-To reproduce from source, install `requirements.txt`, download data as documented in `README.md`, then run the relevant scripts under `scripts/`.
+Current anonymous URL:
+
+```text
+https://anonymous.4open.science/r/privsaf-artifact-20260610/
+```

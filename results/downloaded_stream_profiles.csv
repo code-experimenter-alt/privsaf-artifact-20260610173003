@@ -1,6 +1,0 @@
-dataset_id,target,source_file,rows,valid_rows,missing_rows,missing_rate,mean,std,p01,p50,p99
-air_quality,C6H6(GT),data/air_quality/raw/AirQualityUCI.csv,9471,8991,480,0.050681,10.083105,7.44982,0.7,8.2,34.31
-household_power,Global_active_power,data/household_power/raw/household_power_consumption.txt,2075259,2049280,25979,0.012518,1.091615,1.057294,0.11,0.602,4.85
-bike_sharing,cnt,data/bike_sharing/raw/hour.csv,17379,17379,0,0.0,189.463088,181.387599,2.0,142.0,782.22
-beijing_air,Aotizhongxin PM2.5,data/beijing_air/raw/PRSA2017_Data_20130301-20170228/PRSA_Data_20130301-20170228/PRSA_Data_Aotizhongxin_20130301-20170228.csv,35064,34139,925,0.02638,82.773611,82.135694,3.0,58.0,377.0
-nab,machine_temperature,data/nab/raw/realKnownCause/machine_temperature_system_failure.csv,22695,22695,0,0.0,85.926498,13.746912,32.535952,89.408246,102.978814

@@ -1,6 +1,0 @@
-scenario,actor,writer_id,reader_id,inserted_rows,elapsed_sec,throughput_rows_per_sec,busy_errors,reads,errors
-concurrent_ingest,writer_0,0,,4000,0.007834356016246602,510571.64005630405,0,,
-concurrent_ingest,writer_1,1,,4000,0.032856704987352714,121740.75280950083,0,,
-concurrent_ingest,writer_2,2,,4000,0.017635590978898108,226814.06054303516,0,,
-concurrent_ingest,reader_0,,0,,,,,3,0
-concurrent_ingest,reader_1,,1,,,,,3,0
