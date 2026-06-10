@@ -1,7 +1,0 @@
-{
-  "status": "pass",
-  "metrics": 27,
-  "failed": [],
-  "database_path": "/tmp/privsaf_sqlite_operational_stress/private_telemetry_operational_stress.sqlite",
-  "pressure_database_path": "/tmp/privsaf_sqlite_operational_stress/private_telemetry_page_limit_pressure.sqlite"
-}

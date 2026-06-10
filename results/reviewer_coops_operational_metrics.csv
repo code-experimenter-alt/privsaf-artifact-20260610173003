@@ -1,4 +1,0 @@
-panel,tier,method,epsilon,buckets,threshold,precision,recall,topk_precision,prevalence_lift,estimated_review_burden_rows,total_test_rows,total_fault_rows,pooled_prevalence,recall_source
-coops_verified_flat_full_protocol,all_ge_5,privsaf_range_hmm_r1_fixed_prior,2.0,24,top_1pct_rank,0.0245768102857655,0.0157129214891761,0.0245768102857655,1.571292148917611,2913.0,291283,4556,0.0156411462392243,derived_from_topk_precision_and_total_fault_rows
-coops_verified_flat_full_protocol,all_ge_5,privsaf_range_hmm_r1_fixed_prior,2.0,24,top_5pct_rank,0.0171729363093031,0.054896668206570846,0.0171729363093031,1.097933364131417,14564.0,291283,4556,0.0156411462392243,derived_from_topk_precision_and_total_fault_rows
-coops_verified_flat_full_protocol,all_ge_5,privsaf_range_hmm_r1_fixed_prior,2.0,24,5pct_fpr,,0.0884023411027424,,,,291283,4556,0.0156411462392243,reported_mean_recall_at_5pct_fpr

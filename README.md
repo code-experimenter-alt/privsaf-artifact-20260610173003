@@ -1,39 +1,25 @@
 # PrivSAF Artifact
 
-This repository contains the clean artifact for PrivSAF, an auditable database
-operator for channel-aware scalar LDP stuck-at and flatline cleaning.
+This repository contains the clean code artifact for PrivSAF, an auditable
+database operator for channel-aware scalar LDP stuck-at and flatline cleaning.
 
-The package is organized for paper compilation and experiment reproduction. It
-intentionally omits revision notes, review prompts, build artifacts, generated
-PDFs, raw downloaded datasets, local database files, and the former supplement
-files. The former supplementary material has been folded into `main.tex`.
+The package is organized for experiment reproduction. It intentionally omits
+paper source files, revision notes, review prompts, build artifacts, generated
+PDFs, raw downloaded datasets, local database files, generated result snapshots,
+and the former supplement files. The manuscript source is distributed through
+the separate Overleaf package.
 
 ## Contents
 
-- `main.tex`, `references.bib`, `IEEEtran.bst`, and paper figures needed to
-  rebuild the manuscript.
 - `scripts/`: Python experiment, audit, plotting, and verification scripts.
 - `sql/`: SQLite, DuckDB, PostgreSQL, physical-design, and workflow SQL.
 - `configs/`: benchmark and run configuration files.
 - `data/README.md`: notes for external data acquisition.
-- `results/`: selected lightweight CSV/JSON ledgers and paper figures used to
-  audit the reported results.
 
 The anonymized mirror is:
 
 ```text
 https://anonymous.4open.science/r/privsaf-artifact-20260610/
-```
-
-## Paper
-
-Compile the paper from `main.tex` with BibTeX:
-
-```bash
-pdflatex -interaction=nonstopmode -halt-on-error main.tex
-bibtex main
-pdflatex -interaction=nonstopmode -halt-on-error main.tex
-pdflatex -interaction=nonstopmode -halt-on-error main.tex
 ```
 
 ## Setup
@@ -45,8 +31,8 @@ python -m pip install -r requirements.txt
 ```
 
 Some real-label panels require external public datasets or local utilities
-documented by the relevant scripts. Raw downloaded data and local DB files are
-not included in this clean package.
+documented by the relevant scripts. Raw downloaded data, local DB files, and
+generated outputs are not included in this clean package.
 
 ## Core Reproduction Commands
 
@@ -104,8 +90,4 @@ export PRIVSAF_POSTGRES_DSN="dbname=privsaf_pg_benchmark user=codex host=/var/ru
 python scripts/run_postgres_private_telemetry_pipeline.py
 ```
 
-## Key Result Ledgers
-
-The clean package keeps selected lightweight result files that support the
-paper's reported tables, figures, router decisions, and database artifact
-checks. Regenerated outputs should be written under `results/`.
+Regenerated outputs should be written under `results/`.

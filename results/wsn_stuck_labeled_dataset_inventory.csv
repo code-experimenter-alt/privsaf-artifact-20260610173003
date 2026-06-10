@@ -1,6 +1,0 @@
-case,source_file,label_file,rows,features,fault_rows,fault_rate
-stuck102,data\wsn_fault_detection\raw\Stuck-at\stuck102.xlsx,data\wsn_fault_detection\raw\Stuck-at\ystuck102.xlsx,4688,12,472,0.10068259385665529
-stuck202,data\wsn_fault_detection\raw\Stuck-at\stuck202.xlsx,data\wsn_fault_detection\raw\Stuck-at\ystuck202.xlsx,4688,12,940,0.20051194539249148
-stuck302,data\wsn_fault_detection\raw\Stuck-at\stuck302.xlsx,data\wsn_fault_detection\raw\Stuck-at\ystuck302.xlsx,4688,12,1408,0.3003412969283277
-stuck402,data\wsn_fault_detection\raw\Stuck-at\stuck402.xlsx,data\wsn_fault_detection\raw\Stuck-at\ystuck402.xlsx,4688,12,1876,0.40017064846416384
-stuck502,data\wsn_fault_detection\raw\Stuck-at\stuck502.xlsx,data\wsn_fault_detection\raw\Stuck-at\ystuck502.xlsx,4688,12,2344,0.5

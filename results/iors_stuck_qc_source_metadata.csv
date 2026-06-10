@@ -1,2 +1,0 @@
-source_file,md5,rows,finite_slh_rows,good_rows,all_stuck_rows,persistent_stuck_rows,persistent_min_episode_length,title,citation,time_coverage_start,time_coverage_end,slh_qc_flag_values,slh_qc_flag_meanings
-data\iors_slh\I-ORS_2003_2022_D_SLH.nc,a8601d3cf013742412ee523d172b2ab8,1051920,886218,786849,31609,26697,8,sea level height time-series at KORS I-ORS,https://doi.or.kr/10.22808/DATA-2024-8,2003-01-01T00:00:00Z,2022-12-31T23:50:00Z,"1,2,4,5,7,8","good,range,spike,stuck,metadata,missing_value"

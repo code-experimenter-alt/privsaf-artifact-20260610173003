@@ -1,5 +1,0 @@
-accounting_bucket,count,mean_privsaf_AUPRC,mean_privsaf_prevalence_lift,mean_selected_AUPRC,mean_selected_prevalence_lift,tv_threshold,kl_threshold,utility_lift_threshold,test_label_use
-accepted-good,18,0.9029488140347299,4.5142274369668325,0.9029488140347299,4.5142274369668325,0.1,0.03,2.0,post_hoc_false_accept_false_reject_accounting_only
-accepted-bad,22,0.07850354486090383,0.9025085518636197,0.0995171992227094,1.087247696336118,0.1,0.03,2.0,post_hoc_false_accept_false_reject_accounting_only
-rejected-good,0,,,,,0.1,0.03,2.0,post_hoc_false_accept_false_reject_accounting_only
-rejected-bad,25,0.07659979007610404,1.0213305343480537,0.09179508456129522,1.2239344608172693,0.1,0.03,2.0,post_hoc_false_accept_false_reject_accounting_only

@@ -1,4 +1,0 @@
-station_id,label_code,label,n_rows,positive_rows,fault_rate,usable_value_rule
-702606-96401,TSS,temperature straight string,34649,13,0.0003751912032093278,stored variable unless HadISD flagged_obs preserves removed value
-702606-96401,DSS,dew point straight string,32869,13,0.0003955094465910128,stored variable unless HadISD flagged_obs preserves removed value
-702606-96401,RSS,wind direction straight string,692,140,0.2023121387283237,stored variable unless HadISD flagged_obs preserves removed value
